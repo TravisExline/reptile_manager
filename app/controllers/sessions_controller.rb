@@ -6,6 +6,6 @@ class SessionsController < ApplicationController
 
   post '/sessions' do
     session[:email] = params[:email]
-    redirect '/posts'
+    redirect '/userpage'
   end
 end
