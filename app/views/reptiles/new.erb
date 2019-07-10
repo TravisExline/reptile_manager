@@ -1,0 +1,19 @@
+<% if Helpers.is_logged_in?(session) %>
+<%= @error %>
+  <form action='/posts' method="post">
+    Reptile:
+    <input type="text" name="name">
+    <p>Age: <input type="integer" name="age"></p>
+    <p>Species: <input type="text" name="species"></p>
+    <p>Morph: <input type="text" name="morph"></p><br>
+    Create Your Post Here:
+
+    <input type="submit" name="submit" id="submit">
+
+    <input type="submit" name="submit">
+
+  </form>
+
+  <% else %>
+      <h1> You Can Only Post if Logged In </h1>
+  <% end %>
