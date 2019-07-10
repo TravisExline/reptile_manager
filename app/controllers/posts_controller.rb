@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   get '/posts' do
     if logged_in?
       @posts = Post.all
-      # erb :"posts/public_posts.html"
+      erb :"posts/posts"
     else
       redirect '/login'
     end
