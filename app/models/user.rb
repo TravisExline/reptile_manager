@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :reptiles, :posts
+  has_many :reptiles
+  has_many :posts
 
   has_secure_password
 
