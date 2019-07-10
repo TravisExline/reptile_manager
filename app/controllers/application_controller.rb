@@ -8,11 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    erb :"initial/initial.html"
-  end
-
-  post '/' do
-    redirect '/login'
+    erb :"index"
   end
 
   helpers do
@@ -20,8 +16,8 @@ class ApplicationController < Sinatra::Base
       !!session[:email]
     end
 
-    def login(email)
-      session[:email] = email
+    def current_user
+      @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 
     def logout
