@@ -1,0 +1,15 @@
+ <h1>Edit Your Reptile Information Here</h1>
+
+ <form method="POST" action="/reptiles/<%= @reptile.id %>">
+   <input type="hidden" name="_method" value="patch">
+   <label for="name">Reptile Name:</label>
+   <input type="text" name="name" value ="<%= @reptile.name %>">
+   <label for="age">Age:</label>
+   <input type="integer" name="age" value ="<%= @reptile.age %>">
+   <label for="species">Species:</label>
+   <input type="text" name="species" value ="<%= @reptile.species %>">
+   <label for="morph">Morph:</label>
+   <input type="text" name="morph" value ="<%= @reptile.morph %>">
+
+   <input type="submit" name="" value="Edit Reptile">
+ </form>

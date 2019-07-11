@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   get '/posts' do
     if logged_in?
       @posts = Post.all
-      erb :"posts/posts"
+      @user = current_user
+      erb :"posts/index"
     else
       redirect '/login'
     end
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
 
   get '/posts/new' do
     if logged_in?
-      erb :'/posts/create_post'
+      erb :'/posts/new'
     else
       redirect '/login'
     end

@@ -1,16 +1,5 @@
-<% if Helpers.is_logged_in?(session) %>
-<%= @error %>
-  <form action='/posts' method="post">
-    Content:
-    <input type="text" name="content"><br>
-    Create Your Post Here:
-
-    <input type="submit" name="submit" id="submit">
-
-    <input type="submit" name="submit">
-
-  </form>
-
-  <% else %>
-      <h1> You Can Only Post if Logged In </h1>
-  <% end %>
+<h2>Create a Post</h2>
+<form action="/posts" method="POST">
+  <p>Post: <input type="text" name="content"></p>
+  <input class="btn btn-primary" type="submit" value="submit">
+</form>

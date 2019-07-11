@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :secret_session, 'reptilecollection'
+    set :session_secret, 'reptilecollection'
   end
 
   get '/' do
@@ -13,11 +13,11 @@ class ApplicationController < Sinatra::Base
 
   helpers do
     def logged_in?
-      !!session[:email]
+      !!session[:user_id]
     end
 
     def current_user
-      @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+      current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 
     def logout

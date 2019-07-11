@@ -1,0 +1,9 @@
+<p>Name: <%= @reptile.name %></p>
+<p>Age: <%= @reptile.age %></p>
+<p>Species: <%= @reptile.species %></p>
+<p>Morph: <%= @reptile.morph %></p>
+
+<form method="post" action="/reptiles/<%=@reptile.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Reptile">
+</form>
