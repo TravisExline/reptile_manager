@@ -1,8 +1,8 @@
 class ReptilePostController < ApplicationController
   get '/reptiles' do
     if logged_in?
-      @reptiles = Reptiles.all
-      erb :"reptiles/reptiles"
+      @reptiles = Reptile.all
+      erb :"reptiles/show_reptile"
     else
       redirect '/login'
     end
@@ -10,7 +10,7 @@ class ReptilePostController < ApplicationController
 
   get '/reptiles/new' do
     if logged_in?
-      erb :'/reptiles/create_reptile'
+      erb :'/reptiles/new'
     else
       redirect '/login'
     end
