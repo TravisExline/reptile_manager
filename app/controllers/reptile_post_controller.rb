@@ -36,7 +36,7 @@ class ReptilePostController < ApplicationController
   get '/reptiles/:id' do
     if logged_in?
       @reptile = Reptile.find_by_id(params[:id])
-      erb :'reptiles/show_reptile'
+      erb :'reptiles/show'
     else
       redirect '/login'
     end
@@ -46,7 +46,7 @@ class ReptilePostController < ApplicationController
     if logged_in?
       @reptile = Reptile.find_by_id(params[:id])
       if @reptile && @reptile.user == current_user
-        erb :'reptile/show_reptile'
+        erb :'reptile/show'
       else
         redirect '/reptiles'
       end
