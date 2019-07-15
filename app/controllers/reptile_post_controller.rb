@@ -21,7 +21,7 @@ class ReptilePostController < ApplicationController
       if params[:name] && params[:species] == ""
         redirect '/reptiles/new'
       else
-        @reptile = current_user.reptiles.build(content: params[:content])
+        @reptile = Reptile.create(name: params[:name], age: params[:age], species: params[:species], morph: params[:morph], user_id: current_user.id)
         if @reptile.save
           redirect "/reptiles/#{@reptile.id}"
         else
