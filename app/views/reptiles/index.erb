@@ -1,9 +1,20 @@
-<h1>All Owned Reptiles<h1>
+<h1>All Owned Reptiles</h1>
 <% @reptiles.each do |reptile| %>
   <div>
-    <%= reptile.name %>
-    <%= reptile.age %>
-    <%= reptile.species %>
-    <%= reptile.morph %>
+    <%= @reptile.name %>
+    <%= @reptile.age %>
+    <%= @reptile.species %>
+    <%= @reptile.morph %>
   </div>
 <% end %>
+
+<body>
+  <div class="nav">
+    <% if logged_in? %>
+      <a href="/logout">Logout</a>
+      <a href="/posts">All Posts</a>
+      <a href="/reptiles/new">Enter A New Reptile</a>
+      <a href="/posts/new">Create A New Post</a>
+    <% end %>
+  </div>
+</body
