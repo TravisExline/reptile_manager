@@ -46,8 +46,8 @@ class PostsController < ApplicationController
   get '/posts/:id/edit' do
     if logged_in?
       @post = Post.find_by_id(params[:id])
-      if @post && @post.user == current_user
-        erb :'post/show_post'
+      if @post.user == current_user
+        erb :'posts/edit_post'
       else
         redirect '/posts'
       end
